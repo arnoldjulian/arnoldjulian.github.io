@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Julian Arnold | JA</title>
+    <link>https://arnoldjulian.github.io/authors/admin/</link>
+      <atom:link href="https://arnoldjulian.github.io/authors/admin/index.xml" rel="self" type="application/rss+xml" />
+    <description>Julian Arnold</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language>
+    <image>
+      <url>https://arnoldjulian.github.io/authors/admin/avatar_hud3c7f55d4c2750831e2a1f741745d786_593208_270x270_fill_q75_lanczos_center.jpg</url>
+      <title>Julian Arnold</title>
+      <link>https://arnoldjulian.github.io/authors/admin/</link>
+    </image>
+    
+  </channel>
+</rss>

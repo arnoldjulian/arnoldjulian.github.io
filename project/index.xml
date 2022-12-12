@@ -1,36 +1,59 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Projects | Academic</title>
-    <link>https://example.com/project/</link>
-      <atom:link href="https://example.com/project/index.xml" rel="self" type="application/rss+xml" />
-    <description>Projects</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 27 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <title>Research Projects | JA</title>
+    <link>https://arnoldjulian.github.io/project/</link>
+      <atom:link href="https://arnoldjulian.github.io/project/index.xml" rel="self" type="application/rss+xml" />
+    <description>Research Projects</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 30 Nov 2022 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://example.com/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
-      <title>Projects</title>
-      <link>https://example.com/project/</link>
+      <url>https://arnoldjulian.github.io/media/icon_huec113d82bc1f20423ec7da4ca4804812_85793_512x512_fill_lanczos_center_3.png</url>
+      <title>Research Projects</title>
+      <link>https://arnoldjulian.github.io/project/</link>
     </image>
     
     <item>
-      <title>Example Project</title>
-      <link>https://example.com/project/example/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>https://example.com/project/example/</guid>
-      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
-&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
-&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
-&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
-&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
+      <title>Machine learning phases of matter</title>
+      <link>https://arnoldjulian.github.io/project/phase_transitions/</link>
+      <pubDate>Wed, 30 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://arnoldjulian.github.io/project/phase_transitions/</guid>
+      <description>&lt;h2 id=&#34;short-description&#34;&gt;Short description&lt;/h2&gt;
+&lt;p&gt;Identifying phase transitions and classifying phases of matter is central to understanding the properties
+and behavior of a broad range of material systems. While many-body systems have a large number of degrees of freedom,
+their phases are usually characterized by a small set of physical quantities like response functions or order parameters.
+However, the identification of phases and the transitions between them generally involves a large state space, requiring
+lots of intuition and knowledge about the underlying physical system. In this project, we develop and analyze machine-learning
+methods to perform these tasks in a data-driven manner. Such methods can aid in the identification of unexplored phase transitions
+as well as the discovery of new phases of matter.&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>External Project</title>
-      <link>https://example.com/project/external-project/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>https://example.com/project/external-project/</guid>
-      <description></description>
+      <title>Machine learning molecular collisions</title>
+      <link>https://arnoldjulian.github.io/project/molecular_collisions/</link>
+      <pubDate>Wed, 30 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://arnoldjulian.github.io/project/molecular_collisions/</guid>
+      <description>&lt;h2 id=&#34;short-description&#34;&gt;Short description&lt;/h2&gt;
+&lt;p&gt;Predicting the outcomes of chemical reactions is one of the essential tasks for efficient material design and engineering. However, the exhaustive characterization of reactions at the microscopic state-to-state level quickly becomes computationally intractable using conventional approaches due to the rapid growth of the underlying state space. This is particularly restricting for the study of reactive gas flow at high temperatures, such as hypersonic flow around a space vehicle reentering the atmosphere, because a large number of states and transitions between them are accessible under such conditions. In addition, experimental data is scarce and the system is inherently nonequilibrium. In this project, we tackle this problem by training coarse-grained neural network-based surrogate models given data from ab initio reference simulations which predict the changes in energy and state population distributions upon collision.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Entropy production in ticking clocks</title>
+      <link>https://arnoldjulian.github.io/project/ticking_clocks/</link>
+      <pubDate>Wed, 30 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://arnoldjulian.github.io/project/ticking_clocks/</guid>
+      <description>&lt;h2 id=&#34;short-description&#34;&gt;Short description&lt;/h2&gt;
+&lt;p&gt;The concept of time and its role in physics, in particular quantum theory, remains an
+active field of research. The process of timekeeping is linked to the usage of clocks
+as reference systems. Thus, many open questions about time can be addressed
+through the study of these devices. Ticking clocks provide information about the flow
+of time in terms of discrete ``ticking&amp;rsquo;&amp;rsquo; events. In this project, we study autonomous
+ticking clocks based on a model derived from axiomatic principles. We try to
+answer the question whether the theory of quantum information imposes any
+constraints on the relation between the entropy production per tick of a ticking clock
+and its accuracy.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

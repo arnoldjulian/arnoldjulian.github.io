@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>entropy | JA</title>
+    <link>https://arnoldjulian.github.io/tag/entropy/</link>
+      <atom:link href="https://arnoldjulian.github.io/tag/entropy/index.xml" rel="self" type="application/rss+xml" />
+    <description>entropy</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 30 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://arnoldjulian.github.io/media/icon_huec113d82bc1f20423ec7da4ca4804812_85793_512x512_fill_lanczos_center_3.png</url>
+      <title>entropy</title>
+      <link>https://arnoldjulian.github.io/tag/entropy/</link>
+    </image>
+    
+    <item>
+      <title>Entropy production in ticking clocks</title>
+      <link>https://arnoldjulian.github.io/project/ticking_clocks/</link>
+      <pubDate>Wed, 30 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://arnoldjulian.github.io/project/ticking_clocks/</guid>
+      <description>&lt;h2 id=&#34;short-description&#34;&gt;Short description&lt;/h2&gt;
+&lt;p&gt;The concept of time and its role in physics, in particular quantum theory, remains an
+active field of research. The process of timekeeping is linked to the usage of clocks
+as reference systems. Thus, many open questions about time can be addressed
+through the study of these devices. Ticking clocks provide information about the flow
+of time in terms of discrete ``ticking&amp;rsquo;&amp;rsquo; events. In this project, we study autonomous
+ticking clocks based on a model derived from axiomatic principles. We try to
+answer the question whether the theory of quantum information imposes any
+constraints on the relation between the entropy production per tick of a ticking clock
+and its accuracy.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

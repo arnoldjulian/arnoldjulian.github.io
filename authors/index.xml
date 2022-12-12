@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authors | JA</title>
+    <link>https://arnoldjulian.github.io/authors/</link>
+      <atom:link href="https://arnoldjulian.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
+    <description>Authors</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 30 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://arnoldjulian.github.io/media/icon_huec113d82bc1f20423ec7da4ca4804812_85793_512x512_fill_lanczos_center_3.png</url>
+      <title>Authors</title>
+      <link>https://arnoldjulian.github.io/authors/</link>
+    </image>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1633 @@
+<!DOCTYPE html>
+<!-- This site was created with Wowchemy. https://www.wowchemy.com -->
+<!-- Last Published: December 7, 2022 --><html lang="en-us" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.7.0 for Hugo" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+
+  
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.16f785cdb553c8c4431db6775122af35.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.2/css/academicons.min.css" integrity="sha512-KlJCpRsLf+KKu2VQa5vmRuClRFjxc5lXO03ixZt82HZUk41+1I0bD8KBSA0fY290ayMfWYI9udIqeOWSu1/uZg==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.dd27d8c94ab2019dd0e38a4e2ccf7410.css" />
+
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/libs/chroma/github-light.min.css" title="hl-light" media="print" onload="this.media='all'" >
+    <link rel="stylesheet" href="/css/libs/chroma/dracula.min.css" title="hl-dark" media="print" onload="this.media='all'" disabled>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+
+
+
+
+  <meta name="author" content="Julian Arnold" />
+
+
+
+
+
+  
+
+<meta name="description" content="In recent years, India&rsquo;s Ministry of Statistics &amp; Programme Implementation (MOSPI) has been releasing micro-data for some of the large-scale sample surveys conducted by the National Sample Survey Organization (NSSO). This is kind of cool because, in the past, if you wanted to work with NSS unit-level data you had to purchase it." />
+
+
+
+<link rel="alternate" hreflang="en-us" href="https://arnoldjulian.github.io/post/working-with-nss-data-in-stata/" />
+<link rel="canonical" href="https://arnoldjulian.github.io/post/working-with-nss-data-in-stata/" />
+
+
+
+  <link rel="manifest" href="/manifest.webmanifest" />
+
+
+
+<link rel="icon" type="image/png" href="/media/icon_hu0c8fc276666f55d712a037b4ddb14348_12628_32x32_fill_lanczos_center_3.png" />
+<link rel="apple-touch-icon" type="image/png" href="/media/icon_hu0c8fc276666f55d712a037b4ddb14348_12628_180x180_fill_lanczos_center_3.png" />
+
+<meta name="theme-color" content="#4caf50" />
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+<meta property="twitter:card" content="summary_large_image" />
+
+  <meta property="twitter:site" content="@wowchemy" />
+  <meta property="twitter:creator" content="@wowchemy" />
+<meta property="twitter:image" content="https://arnoldjulian.github.io/post/working-with-nss-data-in-stata/featured.jpg" />
+<meta property="og:site_name" content="JA" />
+<meta property="og:url" content="https://arnoldjulian.github.io/post/working-with-nss-data-in-stata/" />
+<meta property="og:title" content="Working with National Sample Survey (NSS) data in Stata | JA" />
+<meta property="og:description" content="In recent years, India&rsquo;s Ministry of Statistics &amp; Programme Implementation (MOSPI) has been releasing micro-data for some of the large-scale sample surveys conducted by the National Sample Survey Organization (NSSO). This is kind of cool because, in the past, if you wanted to work with NSS unit-level data you had to purchase it." /><meta property="og:image" content="https://arnoldjulian.github.io/post/working-with-nss-data-in-stata/featured.jpg" /><meta property="og:locale" content="en-us" />
+
+  
+    <meta
+      property="article:published_time"
+      content="2021-07-24T00:00:00&#43;00:00"
+    />
+  
+  
+    <meta property="article:modified_time" content="2021-07-07T10:50:25-04:00">
+  
+
+
+
+
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://arnoldjulian.github.io/post/working-with-nss-data-in-stata/"
+  },
+  "headline": "Working with National Sample Survey (NSS) data in Stata",
+  
+  "image": [
+    "https://arnoldjulian.github.io/post/working-with-nss-data-in-stata/featured.jpg"
+  ],
+  
+  "datePublished": "2021-07-24T00:00:00Z",
+  "dateModified": "2021-07-07T10:50:25-04:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Julian Arnold"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "JA",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://arnoldjulian.github.io/media/icon_hu0c8fc276666f55d712a037b4ddb14348_12628_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "In recent years, India\u0026rsquo;s Ministry of Statistics \u0026amp; Programme Implementation (MOSPI) has been releasing micro-data for some of the large-scale sample surveys conducted by the National Sample Survey Organization (NSSO). This is kind of cool because, in the past, if you wanted to work with NSS unit-level data you had to purchase it."
+}
+</script>
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+  
+
+  
+
+
+  
+  <title>Working with National Sample Survey (NSS) data in Stata | JA</title>
+
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="58e9a6f483ddfad5ab959b3f6457c722" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.ec9d49ca50e4b80bdb08f0417a28ed84.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header header--fixed">
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
+
+      
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/">JA</a>
+      </div>
+      
+
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/">JA</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+        
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#about"><span>Home</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#projects"><span>Research projects</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#contact"><span>Contact</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+        
+
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        
+        <li class="nav-item dropdown theme-dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item js-set-theme-light">
+              <span>Light</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-dark">
+              <span>Dark</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-auto">
+              <span>Automatic</span>
+            </a>
+          </div>
+        </li>
+        
+
+        
+        
+
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+
+  </div>
+
+  <div class="page-body">
+    
+    
+    
+
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<div class="article-container pt-3">
+  <h1>Working with National Sample Survey (NSS) data in Stata</h1>
+
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Jul 7, 2021
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    17 min read
+  </span>
+  
+
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+  
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 378px;">
+  <div style="position: relative">
+    <img src="/post/working-with-nss-data-in-stata/featured_hu9c4deddd9aa34be1c3c74d3067b2e8f8_139694_720x2500_fit_q75_h2_lanczos.webp" width="720" height="378" alt="" class="featured-image">
+    <span class="article-header-caption">Utpal Baruah/Reuters</span>
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <p>In recent years, India&rsquo;s Ministry of Statistics &amp; Programme Implementation (MOSPI) has been <a href="http://microdata.gov.in/nada43/index.php/catalog/central/about" target="_blank" rel="noopener">releasing micro-data</a> for some of the large-scale sample surveys conducted by the <a href="http://mospi.nic.in/NSSOa" target="_blank" rel="noopener">National Sample Survey Organization (NSSO)</a>. This is kind of cool because, in the past, if you wanted to work with NSS unit-level data you had to purchase it. This could be an arduous process and the data was not cheap, especially for &ldquo;foreign&rdquo; researchers.</p>
+<p>There is a lot of documentation that comes with these data, but not very much practical information for how to use it. After I noticed that others were struggling with <a href="https://www.researchgate.net/post/How-to-construct-employment-indicators-using-NSSO-dataset-India" target="_blank" rel="noopener">similar questions</a>, I decided to transform my notes into a blog post that I hope will save others some time.</p>
+<p>The examples given here are based on the <em>NSS 68th Round: Employment and Unemployment</em> that was conducted in 2011-2012. For convenience, I am just going to refer to it as the &ldquo;Employment and Unemployment Survey&rdquo; or &ldquo;EUS&rdquo;.</p>
+<p>After 2011-2012 the EUS was replaced by the Periodic Labor Force Survey (PLFS). It is too bad that the NSS abandoned the EUS, because there were some interesting questions there about land ownership and union membership that the PLFS does not include. Nevertheless, the EUS remains a useful resource for historical analysis, and since the EUS is similar in design to other NSSO surveys, the concepts and examples provided here should be useful for analyzing a lot of the other unit-level data released by MOSPI.</p>
+<h2 id="accessing-the-data">Accessing the Data</h2>
+<p>The data that I am going to be working with in this post are located <a href="http://microdata.gov.in/nada43/index.php/catalog/127" target="_blank" rel="noopener">here</a>. You can download the relevant files by clicking on the &ldquo;GET MICRODATA&rdquo; tab and filling out the necessary paperwork.</p>
+<p>Next, read the instructions on how to access the data in the <code>README_FIRST</code> file. To access the unit-level data and documentation, you will need the Nesstar Explorer installed, which you can find in the <code>software</code> folder. Once you have that installed, you need to find and run the <strong>AutorunPro.exe</strong>.</p>
+<div class="alert alert-note">
+  <div>
+    The Nesstar format that the NSSO uses may not be easily accessible for Mac users. However, I did see <a href="https://anthonylouisdagostino.com/on-working-with-indias-nss-data-in-an-osx-environment/" target="_blank" rel="noopener">this post</a> on how to access the data in an OS/X environment.
+  </div>
+</div>
+<p>From there, navigate to <code>Data set\Data Files</code> folder and click on the folder that you want to download. For this example, we will be using <code>Block_5_1_Usual principal activity particulars of household members</code> and <code>Block_4_Demographic particulars of household members</code>.</p>
+<p>Next you need to click on the link that reads &ldquo;Click here to access/export data files from Nesstar format.&rdquo; Now you can download and save the file. I find it helpful to rename the file to something shorter, more intuitive and with fewer spaces. For example, I renamed these two files <code>block_5_1_principal_activity</code> and <code>block_4_demographic_particulars</code>.</p>
+<h2 id="sampling-design">Sampling Design</h2>
+<p>Before working with the NSS data, it is good to be familiar with the basic design of the survey. I will review some of the more important elements here. For more detailed information, you can access the survey documentation. The files titled &ldquo;Introduction Concepts, Definitions and Procedures&rdquo;, &ldquo;Instructions to Field Staff&rdquo; and &ldquo;Procedures for Obtaining Estimates of Aggregates, Ratios and their RSEs&rdquo; in the <code>Other Materials</code> folder should tell you everything you want to know about the survey and how it was conducted.</p>
+<div class="alert alert-note">
+  <div>
+    The design described here pertains to surveys starting with NSS 61 in 2004-05 when the NSSO began stratifying by rural and urban areas within each district. Prior to that, NSS surveys were stratified by population at the state and regional level.
+  </div>
+</div>
+<p>Here are the key features of the sampling design for the 2011-2012 EUS:</p>
+<p><em><strong>PSU</strong></em>: The primary sampling units (PSUs) are census villages in the rural sector and Urban Frame Survey (UFS) blocks in the urban sector. In the NSS documentation, PSUs are referred to as &ldquo;First Stage Units (FSUs).&rdquo;</p>
+<p><em><strong>Sampling Frame</strong></em>: For the rural sector, the sampling frame is all of the census villages. For the urban sector, the sampling frame is a list of UFS blocks.</p>
+<p><em><strong>USU</strong></em>: The ultimate sampling units (USU) are households in the rural and urban sectors. In the NSS documentation, the USU is referred to as the &ldquo;Ultimate Stage Unit.&rdquo;</p>
+<p><em><strong>Strata</strong></em>: The sample is first stratified by rural and urban areas within each district. Then all towns with a population over one million constitute their own separate stratum. So say you have a district with two towns with more than one million inhabitants. In that case, you would have four strata in the district: one rural; one for each of the towns; and a third for the remaining towns with fewer than one million inhabitants. The data taken from each strata are referred to as &ldquo;subsamples&rdquo; in the NSS documentation.</p>
+<p><em><strong>Sub-strata</strong></em>: There are four substrata within each rural and urban stratum. These are created by listing the villages/towns in ascending order of population (for rural areas) or households (for urban areas) and then demarcating the four strata so that each stratum has roughly equal population.</p>
+<p><em><strong>Selection of PSUs</strong></em>: In rural areas, villages are selected by probability proportional to size with replacement, where size is the population of the village as per the census. For urban areas, blocks are selected by simple random sampling without replacement.</p>
+<p><em><strong>Hamlet Groups and Sub-blocks</strong></em>: If the population of the PSU is more than 1,200, it is divided into a smaller number of relatively equal-size hamlet groups or sub-blocks. The number of hamlet groups or sub-blocks increases with the size of the population of the PSU. Once the population has been divided up into hamlet groups or sub-blocks, two of them are selected. The hamlet group or sub-block with the biggest share of the population is always selected. The second is selected by simple random sampling.</p>
+<p><em><strong>Rounds</strong></em>: Most NSS surveys are carried out in multiple rounds (usually four) over an extended period of time (usually one year).</p>
+<p><em><strong>Weights</strong></em>: The NSS data include a number of weights. The file titled &ldquo;sampling.html&rdquo; in the &ldquo;technical information&rdquo; folder has some information on the weights. From Nesstar Explorer, you can access this file through the &ldquo;Sampling&rdquo; icon under &ldquo;Study Description.&rdquo;</p>
+<p>The weights (mulptilers) are subsample weights and have to be manipulated to get overall population weights. In the data, we see:</p>
+<ul>
+<li><code>MLT</code>&ndash;Sub-sample multiplier</li>
+<li><code>MLT_SR</code>&ndash;Sub-round multiplier</li>
+<li><code>Multiplier_comb</code>&ndash;Combined multiplier</li>
+</ul>
+<p><code>Multiplier_comb</code> is the weight for &ldquo;generating subsample-wise estimates based on data of all subrounds taken together.&rdquo; It is calculated by taking <code>MLT</code> and dividing by 100 if <code>NSS</code> = <code>NSC</code> or dividing <code>MLT</code> by 200 otherwise. This is the main weight that you want to work with if you are using the whole database (as opposed to data from a particular subround).</p>
+<ul>
+<li><code>NSS</code>&ndash;the count of sub-sample wise values falling within a stratum</li>
+<li><code>NSC</code>&ndash;sub-sample combined values falling within a stratum</li>
+</ul>
+<p>Whenever a sample value is repeated in both the sub-samples (rural and urban), the multiplier value is (<code>MLT</code>/100), whereas if the sample value is present in only one sub-sample, the multipler value is (<code>MLT</code>/200).</p>
+<p><em><strong>Second Stage Strata</strong></em>: There are three strata for the selection of households within each FSU, hamlet group or sub-block.</p>
+<ul>
+<li>Rural sector
+<ul>
+<li>SSS1: Relatively affluent households</li>
+<li>SSS2: Of the remaining households, those with principal income from non-agricultural activity</li>
+<li>SSS3: Other households</li>
+</ul>
+</li>
+<li>Urban sector
+<ul>
+<li>SSS1: HH with MPCE in top 10% of urban population</li>
+<li>SSS2: HH with MPCE in middle 60% of urban population</li>
+<li>SSS3: HH with MPCE in bottom 30% of urban population</li>
+</ul>
+</li>
+</ul>
+<p><em><strong>Selection of Households</strong></em>: For FSUs without hamlet groups or sub-blocks, the distribution of households among the second stage strata is as follows:</p>
+<ul>
+<li>SSS1: 2 households if there are no hamlet groups/sub-blocks; 1 otherwise</li>
+<li>SSS2: 4 households if there are no hamlet groups/sub-blocks; 2 otherwise</li>
+<li>SSS3: 2 households if there are no hamlet groups/sub-blocks; 1 otherwise</li>
+</ul>
+<h2 id="organizing-the-data">Organizing the Data</h2>
+<p>The NSS data are released in separate &ldquo;blocks.&rdquo; Oftentimes you want to merge the blocks so that you can see how variables stored in one block relate to those stored in another block. For our analysis, we are mostly going to be using data from Block 5 but we will also need to grab data on the respondent&rsquo;s sex from Block 4.</p>
+<p>Let&rsquo;s go ahead and open <code>block_5_1_principal_activity</code>.  The variable names are a little long and unconventional and most of them are not labeled. For clarity&rsquo;s sake, we can rename, label and keep the variables that will be useful for this exercise.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">use block_5_1_principal_activity, clear
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ren State state
+</span></span><span class="line"><span class="cl">lab var state &#34;state code&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ren District_code dist_code
+</span></span><span class="line"><span class="cl">lab var dist_code &#34;district code&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ren Sector sector
+</span></span><span class="line"><span class="cl">lab var sector &#34;rural or urban&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ren Stratum stratum
+</span></span><span class="line"><span class="cl">lab var stratum &#34;stratum&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ren Sub_Stratum_No substratum
+</span></span><span class="line"><span class="cl">lab var substratum &#34;substratum&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ren FSU_Serial_No psu
+</span></span><span class="line"><span class="cl">lab var psu &#34;primary survey unit (village/block)&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ren Hamlet_Group_Sub_Block_No hamlet_subblock
+</span></span><span class="line"><span class="cl">lab var hamlet_subblock &#34;hamlet group or sub-block number&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ren Second_Stage_Stratum_No ss_strata_no
+</span></span><span class="line"><span class="cl">lab var ss_strata_no &#34;second stage stratum number&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ren Sample_Hhld_No household
+</span></span><span class="line"><span class="cl">lab var household &#34;represents the nth household within each of the second stage stratum&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ren Person_Serial_No person
+</span></span><span class="line"><span class="cl">lab var person &#34;identifier for individual respondent&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ren Age age
+</span></span><span class="line"><span class="cl">lab var age &#34;age of respondent&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ren Usual_Principal_Activity_Status upas_code
+</span></span><span class="line"><span class="cl">lab var upas_code &#34;Usual principal activity status code&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ren HHID hhid
+</span></span><span class="line"><span class="cl">lab var hhid &#34;household identifier&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ren Multiplier_comb pweight
+</span></span><span class="line"><span class="cl">lab var pweight &#34;probability weight (combined multiplier)&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">keep state dist_code sector stratum substratum psu pweight hamlet_subblock ss_strata_no household hhid person age upas_code
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"></code></pre></div><p>We need to <code>destring</code> the variable <code>upas_code</code> because it has to be an integer in order to use it with Stata&rsquo;s <code>svy</code> commands as we will do below.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">destring upas_code, replace
+</span></span></code></pre></div><p>We also need to generate an identifier for the first stage strata since the dataset does not actually include one.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">gen fs_strata = state + sector + stratum + substratum
+</span></span><span class="line"><span class="cl">lab var fs_strata &#34;first stage strata&#34;
+</span></span></code></pre></div><p>Now we need to create a unique identifier for each observation that we can use for merging block 5 with other files in the dataset:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">gen id = hhid + person
+</span></span><span class="line"><span class="cl">lab var id &#34;observation identifier&#34;
+</span></span></code></pre></div><p>Let&rsquo;s reorder the data in a more intuitive way and save all of the changes that we made in a new file:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">order id state dist_code sector stratum substratum psu fs_strata hamlet_subblock ss_strata household hhid person pweight age upas_code
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">save block_5_1_exercise, replace
+</span></span></code></pre></div><p>For this exercise, we are going to need to get the sex of the respondent from Block 4 on &ldquo;demographic particulars.&rdquo; Let&rsquo;s open the Block 4 file and save a new file with just the sex of the respondent and the observation identifier.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">use block_4_demographic_particulars, clear
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">destring Sex, replace
+</span></span><span class="line"><span class="cl">recode Sex (2=1) (1=0), gen(sex)
+</span></span><span class="line"><span class="cl">lab var sex &#34;1 = female; 0 = male&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ren Person_Serial_No person
+</span></span><span class="line"><span class="cl">lab var person &#34;identifier for individual respondent&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ren HHID hhid
+</span></span><span class="line"><span class="cl">lab var hhid &#34;household identifier&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">gen id = hhid + person
+</span></span><span class="line"><span class="cl">lab var id &#34;observation identifier&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">keep sex id
+</span></span><span class="line"><span class="cl">save block_4_exercise, replace
+</span></span></code></pre></div><p>Now we can merge the block 4 and 5 files and save the resulting file as a new file titled <code>NSS_exercise</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">use block_5_1_exercise, clear
+</span></span><span class="line"><span class="cl">merge 1:1 id using block_4_exercise
+</span></span><span class="line"><span class="cl">save NSS_exercise, replace
+</span></span></code></pre></div><h2 id="svyset-the-nss-data">Svyset the NSS Data</h2>
+<p>The next step is going to be to <code>svyset</code> the data so that Stata is aware of the key  elements of the survey design. Without these, Stata will not produce accurate point estimates or standard errors</p>
+<p>If you are not familiar with <code>svyset</code>, Stata has a <a href="https://www.youtube.com/watch?v=XYjWCL7IEKU" target="_blank" rel="noopener">video</a> that provides a basic introduction. I also highly recommend this <a href="https://stats.idre.ucla.edu/stata/seminars/survey-data-analysis-in-stata-17/" target="_blank" rel="noopener">UCLA tutorial</a>, which provides a more detailed walkthrough as well as a great introduction to survey design.</p>
+<p>The three basic elements of the survey that we want Stata to be aware of are the primary survey unit, the probability weight and the first stage strata. We should also tell Stata how to deal with possible single units in a stratum by setting the <code>singleunit</code> option. After we <code>svyset</code> these elements, we can use <code>svydescribe</code> to view detailed information about the design elements.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">use NSS_exercise, clear
+</span></span><span class="line"><span class="cl">svyset psu [pw = pweight], strata(fs_strata) singleunit(centered)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">svydescribe
+</span></span></code></pre></div><p>I am omitting the <code>svydescribe</code> output here because it is quite long. But if you run it on your machine, you will notice that the output from <code>svydescribe</code> is very similar but not identical to what is listed in the documentation.</p>
+<p>In the <code>svydescribe</code> output, we see 3,143 total (sub)strata, 12,737 PSUs and a total of 456,999 individuals. The overview section of the documentation says that 12,654 PSUs out of an allotted 12,808 were surveyed while the file titled &ldquo;Estimation Procedure_68.doc&rdquo; says that 12,784 PSUs were allotted. The overview section also states that 100,957 households and 459,784 individuals were surveyed. All of these figures differ slightly from what we find in the files. And doing a similar exercise for the <code>Block_3_Household characteristics</code>, I find that the number of households surveyed is 101,724.</p>
+<p>I am not entirely sure how to reconcile the differences between the documentation and what we see in the files. Perhaps in some cases the NSSO could not survey an allotted PSU due to difficult field conditions. Browsing through the <code>svydescribe</code> output, we see some strata in which the output from <code>svydescribe</code> lists three units where the &ldquo;Estimation Procedure_68.doc&rdquo; file lists four allotted PSUs, which seems like evidence in favor of this hypothesis. The discrepancies could also be due to human error in writing up the documentation. Or perhaps some additional cleaning of the data was done after the documentation was written. Maybe others will have some insights that I can incorporate into the post.</p>
+<h2 id="reproduce-some-nss-results">Reproduce Some NSS Results</h2>
+<p>Let&rsquo;s try to replicate some of the household characteristics estimates from the report entitled &ldquo;Key Indicators of Employment and Unemployment in India, 2011-12.&rdquo;</p>
+<p>We will focus on Table 1 in section 3.3 on Labor Force Participation and Unemployment.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/media/table_3.3.2.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<p>Next, we will generate indicator variables for &ldquo;in the labor force&rdquo; and &ldquo;unemployed&rdquo; based on &ldquo;usual principal activity status&rdquo;. Here are the relevant codes:</p>
+<ul>
+<li>11-51: Employed (we won&rsquo;t use these; but good to know)</li>
+<li>81: Unemployed</li>
+<li>91-99: Not in labor force</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">gen inlf = (upas_code &lt; 90)
+</span></span><span class="line"><span class="cl">lab var inlf &#34;in the labor force&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">gen unemployed = (upas_code == 81)
+</span></span><span class="line"><span class="cl">lab var unemployed &#34;unemployed&#34;
+</span></span></code></pre></div><p>We also need an indicator variables for working age, rural and urban:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">gen working_age = (age &gt;14 &amp; age &lt;60)
+</span></span><span class="line"><span class="cl">lab var working_age &#34;of working age&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">gen rural = (sector == &#34;1&#34;)
+</span></span><span class="line"><span class="cl">lab var rural &#34;rural sector&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">gen urban = (sector == &#34;2&#34;)
+</span></span><span class="line"><span class="cl">lab var urban &#34;urban sector&#34;
+</span></span><span class="line"><span class="cl">save NSS_exercise, replace
+</span></span></code></pre></div><p>Now  we can reproduce some of the statistics in the table. Let&rsquo;s start with the labor force participation rates (LFPR) based on the &ldquo;usual status&rdquo; method that we see in the first six rows of column (2).</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">use NSS_exercise, clear
+</span></span><span class="line"><span class="cl">quietly: collect: svy: mean inlf, over(rural sex) 
+</span></span><span class="line"><span class="cl">quietly: collect: svy: mean inlf, over(rural) 
+</span></span><span class="line"><span class="cl">collect layout (colname) (result[_r_b _r_se _r_ci]) (cmdset) 
+</span></span><span class="line"><span class="cl">collect clear 
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Collection: default
+</span></span><span class="line"><span class="cl">      Rows: colname
+</span></span><span class="line"><span class="cl">   Columns: result[_r_b _r_se _r_ci]
+</span></span><span class="line"><span class="cl">    Tables: cmdset
+</span></span><span class="line"><span class="cl">   Table 1: 4 x 3
+</span></span><span class="line"><span class="cl">   Table 2: 2 x 3
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">1
+</span></span><span class="line"><span class="cl">--------------------------------------------------------------------------------------------------------
+</span></span><span class="line"><span class="cl">                                                             | Coefficient Std. error       95% CI      
+</span></span><span class="line"><span class="cl">-------------------------------------------------------------+------------------------------------------
+</span></span><span class="line"><span class="cl">in the labor force @ rural sector=0 # 1 = female; 0 = male=0 |    .5597634    .002912 .5540553  .5654716
+</span></span><span class="line"><span class="cl">in the labor force @ rural sector=0 # 1 = female; 0 = male=1 |    .1340984   .0024558 .1292845  .1389123
+</span></span><span class="line"><span class="cl">in the labor force @ rural sector=1 # 1 = female; 0 = male=0 |    .5465586   .0022148 .5422171  .5509002
+</span></span><span class="line"><span class="cl">in the labor force @ rural sector=1 # 1 = female; 0 = male=1 |     .181117    .002068 .1770633  .1851707
+</span></span><span class="line"><span class="cl">--------------------------------------------------------------------------------------------------------
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">2
+</span></span><span class="line"><span class="cl">-------------------------------------------------------------------------------
+</span></span><span class="line"><span class="cl">                                    | Coefficient Std. error       95% CI      
+</span></span><span class="line"><span class="cl">------------------------------------+------------------------------------------
+</span></span><span class="line"><span class="cl">in the labor force @ rural sector=0 |    .3555847   .0020774 .3515125  .3596569
+</span></span><span class="line"><span class="cl">in the labor force @ rural sector=1 |    .3678965    .001517 .3649228  .3708702
+</span></span><span class="line"><span class="cl">-------------------------------------------------------------------------------
+</span></span></code></pre></div><p>Notice that here I used the <code>over()</code> subcommand to get the breakdown by sector and sex. I also used the <code>quietly</code> and <code>collect</code> prefixes to enhance the readability of the output. The full output can be obtained by simply deleting these prefixes, e.g. <code>svy: mean inlf</code>.</p>
+<p>Although the results are presented in a slightly different order, we find that we are able to accurately reproduce the results from the report. In the urban sector, the LFPR is 56% for males, 13.4% for females and 35.6% for the urban population overall. In the rural sector, the LFPR is 54.7% for males, 18.1% for females and 36.8% for the rural population overall.</p>
+<p>In addition to the correct estimate of labor force participation rates, <code>svy</code> also gives us standard errors and confidence intervals for each estimate. This is one of the major advantages of using the <code>svy</code> command as opposed to simply multiplying the survey weights by the variable of interest.</p>
+<p>Now let&rsquo;s use the <code>subpop</code> command to reproduce the labor force participation rates for the working age population that we see in the last three rows of column (6):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">use NSS_exercise, clear
+</span></span><span class="line"><span class="cl">quietly: collect: svy, subpop(working_age): mean inlf, over(sex)
+</span></span><span class="line"><span class="cl">quietly: collect: svy, subpop(working_age): mean inlf
+</span></span><span class="line"><span class="cl">collect layout (colname) (result[_r_b _r_se _r_ci]) (cmdset)
+</span></span><span class="line"><span class="cl">collect clear 
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Collection: default
+</span></span><span class="line"><span class="cl">      Rows: colname
+</span></span><span class="line"><span class="cl">   Columns: result[_r_b _r_se _r_ci]
+</span></span><span class="line"><span class="cl">    Tables: cmdset
+</span></span><span class="line"><span class="cl">   Table 1: 2 x 3
+</span></span><span class="line"><span class="cl">   Table 2: 1 x 3
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">1
+</span></span><span class="line"><span class="cl">---------------------------------------------------------------------------------------
+</span></span><span class="line"><span class="cl">                                            | Coefficient Std. error       95% CI      
+</span></span><span class="line"><span class="cl">--------------------------------------------+------------------------------------------
+</span></span><span class="line"><span class="cl">in the labor force @ 1 = female; 0 = male=0 |    .8203601   .0020346 .8163717  .8243484
+</span></span><span class="line"><span class="cl">in the labor force @ 1 = female; 0 = male=1 |    .2471564    .002415 .2424225  .2518903
+</span></span><span class="line"><span class="cl">---------------------------------------------------------------------------------------
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">2
+</span></span><span class="line"><span class="cl">--------------------------------------------------------------
+</span></span><span class="line"><span class="cl">                   | Coefficient Std. error       95% CI      
+</span></span><span class="line"><span class="cl">-------------------+------------------------------------------
+</span></span><span class="line"><span class="cl">in the labor force |      .53865   .0015887 .5355358  .5417643
+</span></span><span class="line"><span class="cl">--------------------------------------------------------------
+</span></span></code></pre></div><p>Finally, let&rsquo;s scroll down to Table 3 in section 3.5 and reproduce some of the unemployment figures in the report.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/media/table_3_unemployment.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<p>For this one, let&rsquo;s reproduce the unemployment figures according to the &ldquo;usual status&rdquo; method for the working age population for the bottom three rows in column (6):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">use NSS_exercise, clear 
+</span></span><span class="line"><span class="cl">quietly: collect: svy, subpop(inlf): mean unemployed, over(working_age sex)
+</span></span><span class="line"><span class="cl">quietly: collect: svy, subpop(inlf): mean unemployed, over(working_age)
+</span></span><span class="line"><span class="cl">collect layout (colname) (result[_r_b _r_se _r_ci]) (cmdset)
+</span></span><span class="line"><span class="cl">collect clear
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Collection: default
+</span></span><span class="line"><span class="cl">      Rows: colname
+</span></span><span class="line"><span class="cl">   Columns: result[_r_b _r_se _r_ci]
+</span></span><span class="line"><span class="cl">    Tables: cmdset
+</span></span><span class="line"><span class="cl">   Table 1: 4 x 3
+</span></span><span class="line"><span class="cl">   Table 2: 2 x 3
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">1
+</span></span><span class="line"><span class="cl">--------------------------------------------------------------------------------------------------
+</span></span><span class="line"><span class="cl">                                                       | Coefficient Std. error       95% CI      
+</span></span><span class="line"><span class="cl">-------------------------------------------------------+------------------------------------------
+</span></span><span class="line"><span class="cl">unemployed @ of working age=0 # 1 = female; 0 = male=0 |    .0083967   .0014861 .0054836  .0113099
+</span></span><span class="line"><span class="cl">unemployed @ of working age=0 # 1 = female; 0 = male=1 |    .0169707   .0071731 .0029098  .0310315
+</span></span><span class="line"><span class="cl">unemployed @ of working age=1 # 1 = female; 0 = male=0 |    .0259937   .0009807 .0240713  .0279161
+</span></span><span class="line"><span class="cl">unemployed @ of working age=1 # 1 = female; 0 = male=1 |    .0391951   .0018342 .0355996  .0427905
+</span></span><span class="line"><span class="cl">--------------------------------------------------------------------------------------------------
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">2
+</span></span><span class="line"><span class="cl">-------------------------------------------------------------------------
+</span></span><span class="line"><span class="cl">                              | Coefficient Std. error       95% CI      
+</span></span><span class="line"><span class="cl">------------------------------+------------------------------------------
+</span></span><span class="line"><span class="cl">unemployed @ of working age=0 |    .0101621   .0019071 .0064237  .0139004
+</span></span><span class="line"><span class="cl">unemployed @ of working age=1 |    .0289707   .0008804  .027245  .0306964
+</span></span><span class="line"><span class="cl">-------------------------------------------------------------------------
+</span></span></code></pre></div><p>Looking at the output where working_age == 1, we see that we are able to reproduce the report&rsquo;s finding that (based on &ldquo;usual status&rdquo; method) the unemployment rate is roughly 2.6% for men, 3.9% for women and 2.9% for the working age population overall. Of course, this is probably not the most convincing method of measuring inequality. But the main point is that we can accurately reproduce the NSSO&rsquo;s results!</p>
+<h2 id="what-about-the-second-stage-strata">What About the Second Stage Strata?</h2>
+<p>You might be thinking, &ldquo;What about the second stage strata? Should we also include those when we <code>svset</code> the data to make our estimates even more precise?&rdquo;&quot; Let&rsquo;s try this and see what happens.</p>
+<p>First, let&rsquo;s produce a second stage strata identifier:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">use NSS_exercise, clear
+</span></span><span class="line"><span class="cl">gen ss_strata = hamlet_subblock + ss_strata_no
+</span></span><span class="line"><span class="cl">lab var ss_strata &#34;second stage strata&#34;
+</span></span><span class="line"><span class="cl">save NSS_exercise, replace
+</span></span></code></pre></div><p>Now, let&rsquo;s try using <code>svyset</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">svyset psu [pw = pweight], strata(fs_strata) ///
+</span></span><span class="line"><span class="cl">|| household, strata(ss_strata) singleunit(centered)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">note: stage 1 is sampled with replacement; further stages will be ignored for
+</span></span><span class="line"><span class="cl">      variance estimation.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Sampling weights: pweight
+</span></span><span class="line"><span class="cl">             VCE: linearized
+</span></span><span class="line"><span class="cl">     Single unit: centered
+</span></span><span class="line"><span class="cl">        Strata 1: fs_strata
+</span></span><span class="line"><span class="cl"> Sampling unit 1: psu
+</span></span><span class="line"><span class="cl">           FPC 1: &lt;zero&gt;
+</span></span></code></pre></div><p>Stata gives a note that it is not considering the second stage strata. According to <a href="https://www.stata.com/statalist/archive/2006-06/msg00074.html" target="_blank" rel="noopener">this thread</a>, this has to do the with the fact that a finite population correction (FPC) has not been specified in the <code>svyset</code> syntax.</p>
+<p>For NSS data, FPC cannot be included for the rural sector because PSUs are indeed selected with replacement as per the survey design. While FPC could theoretically be included for the urban sector, the data needed for calculating the FPC (strata sampling rates or units of population belonging to strata) are not publicly available.</p>
+<p>However, there is also an argument to be made that second stage strata may not be all that important for calculations based on NSS data due to the size of India&rsquo;s population. If the population is so big relative to the sample then you can treat it as infinite, then the second stage strata are immaterial.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this post, I reviewed the basic survey design for the NSS Employment &amp; Unemployment Survey and then gave a couple of examples of how to reproduce the results from the survey&rsquo;s main report. Of course, the real fun in being able to access the unit-level NSS data is going to be in producing your own original estimates. Let me know what you come up with!</p>
+<script src="https://utteranc.es/client.js"
+        repo="eteitelbaum/academic-website"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+    </div>
+
+    
+
+
+
+
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Farnoldjulian.github.io%2Fpost%2Fworking-with-nss-data-in-stata%2F&amp;text=Working&#43;with&#43;National&#43;Sample&#43;Survey&#43;%28NSS%29&#43;data&#43;in&#43;Stata" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Farnoldjulian.github.io%2Fpost%2Fworking-with-nss-data-in-stata%2F&amp;t=Working&#43;with&#43;National&#43;Sample&#43;Survey&#43;%28NSS%29&#43;data&#43;in&#43;Stata" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a href="mailto:?subject=Working%20with%20National%20Sample%20Survey%20%28NSS%29%20data%20in%20Stata&amp;body=https%3A%2F%2Farnoldjulian.github.io%2Fpost%2Fworking-with-nss-data-in-stata%2F" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Farnoldjulian.github.io%2Fpost%2Fworking-with-nss-data-in-stata%2F&amp;title=Working&#43;with&#43;National&#43;Sample&#43;Survey&#43;%28NSS%29&#43;data&#43;in&#43;Stata" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Working&#43;with&#43;National&#43;Sample&#43;Survey&#43;%28NSS%29&#43;data&#43;in&#43;Stata%20https%3A%2F%2Farnoldjulian.github.io%2Fpost%2Fworking-with-nss-data-in-stata%2F" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Farnoldjulian.github.io%2Fpost%2Fworking-with-nss-data-in-stata%2F&amp;title=Working&#43;with&#43;National&#43;Sample&#43;Survey&#43;%28NSS%29&#43;data&#43;in&#43;Stata" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://arnoldjulian.github.io/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hud3c7f55d4c2750831e2a1f741745d786_593208_270x270_fill_q75_lanczos_center.jpg" alt="Julian Arnold"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://arnoldjulian.github.io/">Julian Arnold</a></h5>
+      <h6 class="card-subtitle">PhD Candidate</h6>
+      <p class="card-text">My research interests include comparative political economy, data science and the politics of South Asia.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/julian__arnold" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=dGOUOJkAAAAJ&amp;hl=en" target="_blank" rel="noopener">
+        <i class="fas fa-graduation-cap"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/arnoldjulian" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+
+
+<p class="powered-by">
+  
+  <a href="/privacy/">Privacy Policy</a>
+  
+  
+   &middot; 
+  <a href="/terms/">Terms</a>
+  
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+    
+  
+  
+    
+  
+
+  
+
+  
+  <p class="powered-by copyright-license-text">
+    © 2022 Me. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank">CC BY NC ND 4.0</a>
+  </p>
+  
+
+  <p class="powered-by footer-license-icons">
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank" aria-label="Creative Commons">
+      <i class="fab fa-creative-commons fa-2x" aria-hidden="true"></i>
+      <i class="fab fa-creative-commons-by fa-2x" aria-hidden="true"></i>
+      
+        <i class="fab fa-creative-commons-nc fa-2x" aria-hidden="true"></i>
+      
+      
+        <i class="fab fa-creative-commons-nd fa-2x" aria-hidden="true"></i>
+      
+    </a>
+  </p>
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+
+
+<script src="/js/vendor-bundle.min.d26509351aa0ff874abbee824e982e9b.js"></script>
+
+
+
+
+  
+
+  
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script id="search-hit-fuse-template" type="text/x-template">
+    <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+    </div>
+  </script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+<script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+
+
+  <script src="/js/wowchemy-headroom.db4755770454eb63685f8de785c0a172.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<script src="/en/js/wowchemy.min.e8ee06ba8371980ffde659871dd593b0.js"></script>
+
+
+
+
+
+
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <pre><code></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

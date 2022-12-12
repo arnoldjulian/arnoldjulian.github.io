@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hugo academic | JA</title>
+    <link>https://arnoldjulian.github.io/tag/hugo-academic/</link>
+      <atom:link href="https://arnoldjulian.github.io/tag/hugo-academic/index.xml" rel="self" type="application/rss+xml" />
+    <description>hugo academic</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 05 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://arnoldjulian.github.io/media/icon_hu0c8fc276666f55d712a037b4ddb14348_12628_512x512_fill_lanczos_center_3.png</url>
+      <title>hugo academic</title>
+      <link>https://arnoldjulian.github.io/tag/hugo-academic/</link>
+    </image>
+    
+    <item>
+      <title>Steps to create website with blogdown and the Hugo Academic (Wowchemy) theme</title>
+      <link>https://arnoldjulian.github.io/post/create-a-website-with-blogdown-and-hugo/</link>
+      <pubDate>Fri, 05 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://arnoldjulian.github.io/post/create-a-website-with-blogdown-and-hugo/</guid>
+      <description>&lt;p&gt;These are the steps that I took to set up my website using blogdown and the &lt;a href=&#34;https://wowchemy.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo Academic (Wochemy)&lt;/a&gt; theme. I also did a little &lt;a href=&#34;https://www.youtube.com/watch?v=BHpkLJieXPE&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&amp;ldquo;how to&amp;rdquo; session&lt;/a&gt; with some GW political science graduate students where we worked through these steps and got everyone started with a blogdown site. Many of the steps recounted here are based on what I learned from &lt;a href=&#34;https://alison.rbind.io/blog/2020-12-new-year-new-blogdown/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this super-helpful post&lt;/a&gt; by Alison Hill.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Open a GitHub account and set up a personal access token (PAT) in R using &lt;code&gt;usethis::create_github_token()&lt;/code&gt;. Consult &lt;a href=&#34;https://happygitwithr.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Happy Git and Git Hub for the UseR&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create a &lt;a href=&#34;https://github.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Github&lt;/a&gt; repository. Initialize the repository with a &lt;code&gt;README&lt;/code&gt; but don&amp;rsquo;t worry about adding &lt;code&gt;.gitignore&lt;/code&gt; or a license.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Go to your new repository and click on the green button that says &lt;strong&gt;Code&lt;/strong&gt;. Choose HTTPS (the default) and click on the clipboard to copy the link.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Open RStudio. Navigate to &lt;code&gt;File &amp;gt; New Project &amp;gt; Version Control &amp;gt; Git&lt;/code&gt; and paste the URL from step 3 into the &lt;strong&gt;Repository URL:&lt;/strong&gt; field. Browse to a location where you want to store the project and click &lt;strong&gt;Create Project&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Install blogdown (&lt;code&gt;install.packages(&amp;quot;blogdown&amp;quot;)&lt;/code&gt;).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create the site:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;library(blogdown)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;new_site(theme = &amp;#34;wowchemy/starter-academic&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Select &lt;code&gt;y&lt;/code&gt; to let blogdown star the server and get a local preview. In the future, you can use &lt;code&gt;blogdown::stop_server&lt;/code&gt; to stop the server and &lt;code&gt;blogdown::serve_site&lt;/code&gt; to restart it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create content.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Check content using &lt;code&gt;blogdown::check_content()&lt;/code&gt; and fix any issues.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Commit changes with &lt;code&gt;usethis::use_git()&lt;/code&gt; and push them to GitHub using the little green arrow in RStudio&amp;rsquo;s Git window.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Publish the site to Netlify. Sign up using your GitHub account, then log in and select &lt;code&gt;New site from Git &amp;gt; Continuous Deployment: GitHub&lt;/code&gt;. Select the repository with your site and deploy it!&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;script src=&#34;https://utteranc.es/client.js&#34;
+        repo=&#34;eteitelbaum/academic-website&#34;
+        issue-term=&#34;pathname&#34;
+        theme=&#34;github-light&#34;
+        crossorigin=&#34;anonymous&#34;
+        async&gt;
+&lt;/script&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Managing publications on your Hugo Academic website</title>
+      <link>https://arnoldjulian.github.io/post/managing-pubs-academic-website/</link>
+      <pubDate>Fri, 29 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://arnoldjulian.github.io/post/managing-pubs-academic-website/</guid>
+      <description>&lt;p&gt;For my first blog post, I thought I would say a little bit about how I set up the publications section of my website. There are a good many tutorials out there on how to set up a website using blogdown and the Hugo Academic theme (my favorite guide is &lt;a href=&#34;https://alison.rbind.io/post/new-year-new-blogdown/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this one&lt;/a&gt;  by Alison Hill). But I found less information on how to manage academic content, so I thought it might be helpful to share what I learned.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: Everything I am about to review was done using Hugo version 0.80.0 and blogdown version 0.21.80.&lt;/p&gt;
+&lt;h2 id=&#34;step-1-import-your-publications&#34;&gt;Step 1: Import your publications&lt;/h2&gt;
+&lt;p&gt;The first step is to import your publications from your reference manager to your &lt;code&gt;content\publication&lt;/code&gt; folder. Currently, there is no tool in blogdown to help with this, so I used the Python-based &lt;a href=&#34;https://github.com/wowchemy/hugo-academic-cli&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Academic CLI&lt;/a&gt; tool described in the &lt;a href=&#34;https://wowchemy.com/docs/content/publications/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wowchemy documentation&lt;/a&gt;. Conveniently, you can opt to install an earlier version of the tool if you don&amp;rsquo;t want to run it through Hugo in Python.&lt;/p&gt;
+&lt;h2 id=&#34;step-2-dress-up-your-publications&#34;&gt;Step 2: Dress up your publications&lt;/h2&gt;
+&lt;p&gt;Now you can go to the &lt;code&gt;publication&lt;/code&gt; folder and edit the individual publications. You can edit the basic info in the &lt;code&gt;index.md&lt;/code&gt; file such as the title, author or publication type and add links to relevant external or local content such as a .pdf, appendix or replication materials. Hugo offers some standard links such as &lt;code&gt;url_pdf&lt;/code&gt; and &lt;code&gt;url_code&lt;/code&gt;, but you can also include custom links. Here is an example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;title: &amp;#34;Fast Fashion or Clean Clothes? Estimating the Value of Labor Standards&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;date: 2021-01-28
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;publishDate: 2021-01-05T20:13:52.623034Z
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;authors: [&amp;#34;Emmanuel Teitelbaum&amp;#34;, &amp;#34;Aparna Ravi&amp;#34;]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;publication_types: [&amp;#34;3&amp;#34;]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;abstract: &amp;#34;We test the relative strength of consumer preferences for internationally recognized labor rights with a series of conjoint experiments embedded in a survey of more than 2,000 U.S. consumers. We employ a Bayesian approach to estimate consumer demand for ethically-made garments and to simulate how that demand translates into increased profits for apparel firms. We find that reported labor rights violations reduce expected profits while advertising respect for various labor standards through ethical labels and certifications tends to boost them. But the profits flowing from simple labeling initiatives are limited by the ability of other firms to adopt similar advertising campaigns. Since respect for labor rights cannot be patented, corporate social responsibility initiatives may only prove valuable for a handful of first-movers that can incorporate worker protections as a core element of their brand strategy. Our findings have important implications for debates regarding the effectiveness of private governance initiatives.&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;featured: true
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;publication: &amp;#34;Working Paper&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;url_pdf: &amp;#34;pdf/teitelbaum_ravi.pdf&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;links: 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- name: Online Appendix
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  url: pdf/supplemental_information.pdf
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Another nice touch is to add a &lt;code&gt;featured.jpg&lt;/code&gt; by including it in the publication&amp;rsquo;s folder. This can be a picture of your book cover, the cover of the journal where you published your article or some other related image. You can also set it up so that the image only appears in the preview on the homepage, and not after you click on the publication, like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;image: 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  preview only: true  
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;step-3-use-featured-widgets-to-set-up-separate-sections&#34;&gt;Step 3: Use &amp;ldquo;featured&amp;rdquo; widgets to set up separate sections&lt;/h2&gt;
+&lt;p&gt;You can make creative use of the &amp;ldquo;featured&amp;rdquo; widgets to set up separate sections for your publications. In my case I wanted a section for books, one for journal articles and one for working papers.&lt;/p&gt;
+&lt;p&gt;In the &lt;code&gt;content\home&lt;/code&gt; folder, I made a copy of &lt;code&gt;featured.md&lt;/code&gt; and named it &lt;code&gt;working-papers.md&lt;/code&gt;. I then renamed the original &lt;code&gt;featured.md&lt;/code&gt; to &lt;code&gt;books.md&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;From there, I opened &lt;code&gt;books.md&lt;/code&gt;, set &lt;code&gt;weight:&lt;/code&gt; to &lt;code&gt;20&lt;/code&gt;, changed the &lt;code&gt;title:&lt;/code&gt; to &lt;code&gt;Book&lt;/code&gt; and set &lt;code&gt;filters: publication_type:&lt;/code&gt; to &lt;code&gt;&amp;quot;5&amp;quot;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Next, I opened the new &lt;code&gt;working-papers.md&lt;/code&gt; file, set &lt;code&gt;weight:&lt;/code&gt; to &lt;code&gt;30&lt;/code&gt;, changed &lt;code&gt;title:&lt;/code&gt; to &lt;code&gt;Working Papers&lt;/code&gt; and set &lt;code&gt;filters: publication_type:&lt;/code&gt; to  &lt;code&gt;&amp;quot;3&amp;quot;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Then I renamed &lt;code&gt;publications.md&lt;/code&gt; to &lt;code&gt;articles.md&lt;/code&gt;, opened the file, set &lt;code&gt;weight:&lt;/code&gt; to &lt;code&gt;25&lt;/code&gt;, &lt;code&gt;title:&lt;/code&gt; to  &lt;code&gt;Journal Articles&lt;/code&gt; and set &lt;code&gt;exclude_featured:&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt;. This ensures that the books and working papers that I want to include in the &amp;ldquo;featured&amp;rdquo; widgets do not also appear in my &amp;ldquo;Journal Articles&amp;rdquo; section.&lt;/p&gt;
+&lt;p&gt;Finally, I set &lt;code&gt;featured:&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; in the &lt;code&gt;index.md&lt;/code&gt; files for my book and working papers in &lt;code&gt;content\publication&lt;/code&gt; to populate the new &amp;ldquo;Book&amp;rdquo; and &amp;ldquo;Working Papers&amp;rdquo; featured widgets.&lt;/p&gt;
+&lt;p&gt;This gives me three consecutive sections listing my book, journal articles and working papers.&lt;/p&gt;
+&lt;h2 id=&#34;step-4-add-more-publications&#34;&gt;Step 4: Add more publications&lt;/h2&gt;
+&lt;p&gt;The easiest way to add new publications is to use the Academic CLI tool discussed in step one and a new &lt;code&gt;.bib&lt;/code&gt; file.&lt;/p&gt;
+&lt;p&gt;Theoretically, there should also be a way to generate a new publication directly in R Markdown using the &lt;code&gt;blogdown::hugo::new_content&lt;/code&gt; wrapper, but I have not figured out how to make it work. I have posted &lt;a href=&#34;https://stackoverflow.com/questions/66057149/how-to-add-a-new-publication-to-a-blogdown-academic-themed-website&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;a query&lt;/a&gt; about this on stack overflow in case anyone has a clue.&lt;/p&gt;
+&lt;script src=&#34;https://utteranc.es/client.js&#34;
+        repo=&#34;eteitelbaum/academic-website&#34;
+        issue-term=&#34;pathname&#34;
+        theme=&#34;github-light&#34;
+        crossorigin=&#34;anonymous&#34;
+        async&gt;
+&lt;/script&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

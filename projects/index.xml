@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Publications | JA</title>
+    <link>https://arnoldjulian.github.io/projects/</link>
+      <atom:link href="https://arnoldjulian.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
+    <description>Publications</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jan 2006 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://arnoldjulian.github.io/media/icon_hu0c8fc276666f55d712a037b4ddb14348_12628_512x512_fill_lanczos_center_3.png</url>
+      <title>Publications</title>
+      <link>https://arnoldjulian.github.io/projects/</link>
+    </image>
+    
+    <item>
+      <title>Machine learning phases of matter</title>
+      <link>https://arnoldjulian.github.io/projects/phase_transitions/</link>
+      <pubDate>Sun, 01 Jan 2006 00:00:00 +0000</pubDate>
+      <guid>https://arnoldjulian.github.io/projects/phase_transitions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine learning molecular collisions</title>
+      <link>https://arnoldjulian.github.io/projects/molecular_collisions/</link>
+      <pubDate>Sun, 01 Jan 2006 00:00:00 +0000</pubDate>
+      <guid>https://arnoldjulian.github.io/projects/molecular_collisions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Entropy production in ticking clocks</title>
+      <link>https://arnoldjulian.github.io/projects/ticking_clocks/</link>
+      <pubDate>Sun, 07 May 2000 00:00:00 +0000</pubDate>
+      <guid>https://arnoldjulian.github.io/projects/ticking_clocks/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>neural networks | JA</title>
+    <link>https://arnoldjulian.github.io/tag/neural-networks/</link>
+      <atom:link href="https://arnoldjulian.github.io/tag/neural-networks/index.xml" rel="self" type="application/rss+xml" />
+    <description>neural networks</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 30 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://arnoldjulian.github.io/media/icon_huec113d82bc1f20423ec7da4ca4804812_85793_512x512_fill_lanczos_center_3.png</url>
+      <title>neural networks</title>
+      <link>https://arnoldjulian.github.io/tag/neural-networks/</link>
+    </image>
+    
+    <item>
+      <title>Machine learning phases of matter</title>
+      <link>https://arnoldjulian.github.io/project/phase_transitions/</link>
+      <pubDate>Wed, 30 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://arnoldjulian.github.io/project/phase_transitions/</guid>
+      <description>&lt;h2 id=&#34;short-description&#34;&gt;Short description&lt;/h2&gt;
+&lt;p&gt;Identifying phase transitions and classifying phases of matter is central to understanding the properties
+and behavior of a broad range of material systems. While many-body systems have a large number of degrees of freedom,
+their phases are usually characterized by a small set of physical quantities like response functions or order parameters.
+However, the identification of phases and the transitions between them generally involves a large state space, requiring
+lots of intuition and knowledge about the underlying physical system. In this project, we develop and analyze machine-learning
+methods to perform these tasks in a data-driven manner. Such methods can aid in the identification of unexplored phase transitions
+as well as the discovery of new phases of matter.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Machine learning molecular collisions</title>
+      <link>https://arnoldjulian.github.io/project/molecular_collisions/</link>
+      <pubDate>Wed, 30 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://arnoldjulian.github.io/project/molecular_collisions/</guid>
+      <description>&lt;h2 id=&#34;short-description&#34;&gt;Short description&lt;/h2&gt;
+&lt;p&gt;Predicting the outcomes of chemical reactions is one of the essential tasks for efficient material design and engineering. However, the exhaustive characterization of reactions at the microscopic state-to-state level quickly becomes computationally intractable using conventional approaches due to the rapid growth of the underlying state space. This is particularly restricting for the study of reactive gas flow at high temperatures, such as hypersonic flow around a space vehicle reentering the atmosphere, because a large number of states and transitions between them are accessible under such conditions. In addition, experimental data is scarce and the system is inherently nonequilibrium. In this project, we tackle this problem by training coarse-grained neural network-based surrogate models given data from ab initio reference simulations which predict the changes in energy and state population distributions upon collision.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
