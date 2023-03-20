@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sum-of-squares | JA</title>
+    <link>https://arnoldjulian.github.io/tag/sum-of-squares/</link>
+      <atom:link href="https://arnoldjulian.github.io/tag/sum-of-squares/index.xml" rel="self" type="application/rss+xml" />
+    <description>sum-of-squares</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 20 Mar 2023 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://arnoldjulian.github.io/media/icon_huec113d82bc1f20423ec7da4ca4804812_85793_512x512_fill_lanczos_center_3.png</url>
+      <title>sum-of-squares</title>
+      <link>https://arnoldjulian.github.io/tag/sum-of-squares/</link>
+    </image>
+    
+    <item>
+      <title>Performance bounds for quantum control</title>
+      <link>https://arnoldjulian.github.io/project/quantum_control/</link>
+      <pubDate>Mon, 20 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://arnoldjulian.github.io/project/quantum_control/</guid>
+      <description>&lt;h2 id=&#34;short-description&#34;&gt;Short description&lt;/h2&gt;
+&lt;p&gt;Feedback control of devices at the quantum level holds
+enormous potential for current and future applications in the
+field of quantum information science. However, due
+to the nonlinear and stochastic nature of quantum systems
+under continuous observation this is a difficult task.
+As such, heuristics, such as reinforcement learning or expert intuition, are often used for the design of quantum feedback controllers. While heuristically derived control policies are frequently found to perform
+remarkably well in practice, their degree of suboptimality essentially always lacks quantification. In this project, we tackle this problem by combining quantum filtering theory and moment-sum-of-squares techniques to construct a hierarchy of convex optimization problems that furnish monotonically improving, computable bounds on the best attainable performance for a large class of quantum feedback control problems.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
