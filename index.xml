@@ -5,7 +5,7 @@
     <link>https://arnoldjulian.github.io/</link>
       <atom:link href="https://arnoldjulian.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>JA</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 20 Mar 2023 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 10 Apr 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://arnoldjulian.github.io/media/icon_huec113d82bc1f20423ec7da4ca4804812_85793_512x512_fill_lanczos_center_3.png</url>
       <title>JA</title>
@@ -31,7 +31,7 @@ as well as the discovery of new phases of matter.&lt;/p&gt;
     <item>
       <title>Performance bounds for quantum control</title>
       <link>https://arnoldjulian.github.io/project/quantum_control/</link>
-      <pubDate>Mon, 20 Mar 2023 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
       <guid>https://arnoldjulian.github.io/project/quantum_control/</guid>
       <description>&lt;h2 id=&#34;short-description&#34;&gt;Short description&lt;/h2&gt;
 &lt;p&gt;Feedback control of devices at the quantum level holds
