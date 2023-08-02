@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created with Wowchemy. https://www.wowchemy.com -->
-<!-- Last Published: March 20, 2023 --><html lang="en-us" >
+<!-- Last Published: August 2, 2023 --><html lang="en-us" >
 
 
 <head>
@@ -324,7 +324,7 @@
 
   
 
-<meta name="description" content="Bounding the best attainable performance for quantum feedback control problems using moment-sum-of-squares techniques." />
+<meta name="description" content="Implementing continuous isospectral flows in a differentiable manner to compute derivatives efficiently and accurately, enabling the solution of inverse problems." />
 
 
 
@@ -363,16 +363,16 @@
 <meta property="og:site_name" content="JA" />
 <meta property="og:url" content="https://arnoldjulian.github.io/project/flow_equations/" />
 <meta property="og:title" content="Differentiable isospectral flows for matrix diagonalization | JA" />
-<meta property="og:description" content="Bounding the best attainable performance for quantum feedback control problems using moment-sum-of-squares techniques." /><meta property="og:image" content="https://arnoldjulian.github.io/project/flow_equations/featured.png" /><meta property="og:locale" content="en-us" />
+<meta property="og:description" content="Implementing continuous isospectral flows in a differentiable manner to compute derivatives efficiently and accurately, enabling the solution of inverse problems." /><meta property="og:image" content="https://arnoldjulian.github.io/project/flow_equations/featured.png" /><meta property="og:locale" content="en-us" />
 
   
     <meta
       property="article:published_time"
-      content="2023-03-21T00:00:00&#43;00:00"
+      content="2023-08-02T00:00:00&#43;00:00"
     />
   
   
-    <meta property="article:modified_time" content="2023-03-21T00:00:00&#43;00:00">
+    <meta property="article:modified_time" content="2023-08-02T00:00:00&#43;00:00">
   
 
 
@@ -404,8 +404,8 @@
     "https://arnoldjulian.github.io/project/flow_equations/featured.png"
   ],
   
-  "datePublished": "2023-03-21T00:00:00Z",
-  "dateModified": "2023-03-21T00:00:00Z",
+  "datePublished": "2023-08-02T00:00:00Z",
+  "dateModified": "2023-08-02T00:00:00Z",
   
   "author": {
     "@type": "Person",
@@ -420,7 +420,7 @@
       "url": "https://arnoldjulian.github.io/media/icon_huec113d82bc1f20423ec7da4ca4804812_85793_192x192_fill_lanczos_center_3.png"
     }
   },
-  "description": "Bounding the best attainable performance for quantum feedback control problems using moment-sum-of-squares techniques."
+  "description": "Implementing continuous isospectral flows in a differentiable manner to compute derivatives efficiently and accurately, enabling the solution of inverse problems."
 }
 </script>
 
@@ -720,7 +720,7 @@
     
       
     
-    Mar 21, 2023
+    Aug 2, 2023
   </span>
   
 
@@ -783,12 +783,9 @@
   
   
     
-    
-      
-    
   
-  <a class="btn btn-outline-primary btn-page-header" href="/xxx" >
-    arXiv preprint</a>
+  <a class="btn btn-outline-primary btn-page-header" href="https://www.youtube.com/live/gyufVG56TEQ?feature=share&amp;t=5249" target="_blank" rel="noopener">
+    Short talk at JuliaCon (2023)</a>
 
 
 </div>
@@ -810,13 +807,7 @@
 
     <div class="article-style">
       <h2 id="short-description">Short description</h2>
-<p>Feedback control of devices at the quantum level holds
-enormous potential for current and future applications in the
-field of quantum information science. However, due
-to the nonlinear and stochastic nature of quantum systems
-under continuous observation this is a difficult task.
-As such, heuristics, such as reinforcement learning or expert intuition, are often used for the design of quantum feedback controllers. While heuristically derived control policies are frequently found to perform
-remarkably well in practice, their degree of suboptimality essentially always lacks quantification. In this project, we tackle this problem by combining quantum filtering theory and moment-sum-of-squares techniques to construct a hierarchy of convex optimization problems that furnish monotonically improving, computable bounds on the best attainable performance for a large class of quantum feedback control problems.</p>
+<p>One of the most important problems in numerical analysis is the design of algorithms for solving the eigenvalue problem, i.e., to find the eigenvalues and eigenvectors of a matrix. For a Hermitian matrix, this amounts to constructing a unitary transformation that brings it into a diagonal form. Traditional iterative algorithms, such as the Jacobi eigenvalue algorithm or the QR algorithm, accomplish this in a series of discrete steps. In the continuum limit, the unitary transformation is instead performed in a continuous fashion, as described by isospectral flows. Solving the ODEs modeling such an isospectral flow numerically in turn corresponds to an iterative eigenvalue algorithm. The QR algorithm, for example, emerges when sampling a particular isospectral flow at unit intervals. Eigenvalue algorithms based on continuous isospectral flows have proven particularly useful for studying closed quantum many-body systems whose properties are determined by their Hamiltonian - a Hermitian matrix whose dimension grows exponentially with the number of system constituents. In this case, the operator structure of typical physical Hamiltonians can be exploited to introduce approximations that enable the analysis of larger systems. In this project, we implement continuous isospectral flows in a differentiable manner in Julia. This allows for the efficient and accurate computation of derivatives of physical quantities of interest, such as (time-dependent) expectation values of observables, with respect to Hamiltonian parameters. The derivative information can be utilized to perform, e.g., parameter estimation, inverse Hamiltonian design, or sensitivity analysis.</p>
 
     </div>
 
@@ -828,13 +819,17 @@ remarkably well in practice, their degree of suboptimality essentially always la
 
 <div class="article-tags">
   
-  <a class="badge badge-light" href="/tag/quantum-control/">quantum control</a>
+  <a class="badge badge-light" href="/tag/differentiable/">differentiable</a>
   
-  <a class="badge badge-light" href="/tag/sum-of-squares/">sum-of-squares</a>
+  <a class="badge badge-light" href="/tag/inverse-design/">inverse design</a>
   
-  <a class="badge badge-light" href="/tag/bounds/">bounds</a>
+  <a class="badge badge-light" href="/tag/diagonalization/">diagonalization</a>
   
-  <a class="badge badge-light" href="/tag/optimal/">optimal</a>
+  <a class="badge badge-light" href="/tag/many-body-physics/">many-body physics</a>
+  
+  <a class="badge badge-light" href="/tag/dynamical-system/">dynamical system</a>
+  
+  <a class="badge badge-light" href="/tag/sensitivity/">sensitivity</a>
   
 </div>
 

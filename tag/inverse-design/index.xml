@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>inverse design | JA</title>
+    <link>https://arnoldjulian.github.io/tag/inverse-design/</link>
+      <atom:link href="https://arnoldjulian.github.io/tag/inverse-design/index.xml" rel="self" type="application/rss+xml" />
+    <description>inverse design</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 02 Aug 2023 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://arnoldjulian.github.io/media/icon_huec113d82bc1f20423ec7da4ca4804812_85793_512x512_fill_lanczos_center_3.png</url>
+      <title>inverse design</title>
+      <link>https://arnoldjulian.github.io/tag/inverse-design/</link>
+    </image>
+    
+    <item>
+      <title>Differentiable isospectral flows for matrix diagonalization</title>
+      <link>https://arnoldjulian.github.io/project/flow_equations/</link>
+      <pubDate>Wed, 02 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://arnoldjulian.github.io/project/flow_equations/</guid>
+      <description>&lt;h2 id=&#34;short-description&#34;&gt;Short description&lt;/h2&gt;
+&lt;p&gt;One of the most important problems in numerical analysis is the design of algorithms for solving the eigenvalue problem, i.e., to find the eigenvalues and eigenvectors of a matrix. For a Hermitian matrix, this amounts to constructing a unitary transformation that brings it into a diagonal form. Traditional iterative algorithms, such as the Jacobi eigenvalue algorithm or the QR algorithm, accomplish this in a series of discrete steps. In the continuum limit, the unitary transformation is instead performed in a continuous fashion, as described by isospectral flows. Solving the ODEs modeling such an isospectral flow numerically in turn corresponds to an iterative eigenvalue algorithm. The QR algorithm, for example, emerges when sampling a particular isospectral flow at unit intervals. Eigenvalue algorithms based on continuous isospectral flows have proven particularly useful for studying closed quantum many-body systems whose properties are determined by their Hamiltonian - a Hermitian matrix whose dimension grows exponentially with the number of system constituents. In this case, the operator structure of typical physical Hamiltonians can be exploited to introduce approximations that enable the analysis of larger systems. In this project, we implement continuous isospectral flows in a differentiable manner in Julia. This allows for the efficient and accurate computation of derivatives of physical quantities of interest, such as (time-dependent) expectation values of observables, with respect to Hamiltonian parameters. The derivative information can be utilized to perform, e.g., parameter estimation, inverse Hamiltonian design, or sensitivity analysis.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -5,7 +5,7 @@
     <link>https://arnoldjulian.github.io/authors/ja-in-collaboration-with-frank-schafer-heinz-krummenacher-stefan-kehrein-and-christoph-bruder/</link>
       <atom:link href="https://arnoldjulian.github.io/authors/ja-in-collaboration-with-frank-schafer-heinz-krummenacher-stefan-kehrein-and-christoph-bruder/index.xml" rel="self" type="application/rss+xml" />
     <description>JA in collaboration with Frank Schäfer, Heinz Krummenacher, Stefan Kehrein, and Christoph Bruder</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 21 Mar 2023 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 02 Aug 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://arnoldjulian.github.io/media/icon_huec113d82bc1f20423ec7da4ca4804812_85793_512x512_fill_lanczos_center_3.png</url>
       <title>JA in collaboration with Frank Schäfer, Heinz Krummenacher, Stefan Kehrein, and Christoph Bruder</title>
@@ -15,16 +15,10 @@
     <item>
       <title>Differentiable isospectral flows for matrix diagonalization</title>
       <link>https://arnoldjulian.github.io/project/flow_equations/</link>
-      <pubDate>Tue, 21 Mar 2023 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 02 Aug 2023 00:00:00 +0000</pubDate>
       <guid>https://arnoldjulian.github.io/project/flow_equations/</guid>
       <description>&lt;h2 id=&#34;short-description&#34;&gt;Short description&lt;/h2&gt;
-&lt;p&gt;Feedback control of devices at the quantum level holds
-enormous potential for current and future applications in the
-field of quantum information science. However, due
-to the nonlinear and stochastic nature of quantum systems
-under continuous observation this is a difficult task.
-As such, heuristics, such as reinforcement learning or expert intuition, are often used for the design of quantum feedback controllers. While heuristically derived control policies are frequently found to perform
-remarkably well in practice, their degree of suboptimality essentially always lacks quantification. In this project, we tackle this problem by combining quantum filtering theory and moment-sum-of-squares techniques to construct a hierarchy of convex optimization problems that furnish monotonically improving, computable bounds on the best attainable performance for a large class of quantum feedback control problems.&lt;/p&gt;
+&lt;p&gt;One of the most important problems in numerical analysis is the design of algorithms for solving the eigenvalue problem, i.e., to find the eigenvalues and eigenvectors of a matrix. For a Hermitian matrix, this amounts to constructing a unitary transformation that brings it into a diagonal form. Traditional iterative algorithms, such as the Jacobi eigenvalue algorithm or the QR algorithm, accomplish this in a series of discrete steps. In the continuum limit, the unitary transformation is instead performed in a continuous fashion, as described by isospectral flows. Solving the ODEs modeling such an isospectral flow numerically in turn corresponds to an iterative eigenvalue algorithm. The QR algorithm, for example, emerges when sampling a particular isospectral flow at unit intervals. Eigenvalue algorithms based on continuous isospectral flows have proven particularly useful for studying closed quantum many-body systems whose properties are determined by their Hamiltonian - a Hermitian matrix whose dimension grows exponentially with the number of system constituents. In this case, the operator structure of typical physical Hamiltonians can be exploited to introduce approximations that enable the analysis of larger systems. In this project, we implement continuous isospectral flows in a differentiable manner in Julia. This allows for the efficient and accurate computation of derivatives of physical quantities of interest, such as (time-dependent) expectation values of observables, with respect to Hamiltonian parameters. The derivative information can be utilized to perform, e.g., parameter estimation, inverse Hamiltonian design, or sensitivity analysis.&lt;/p&gt;
 </description>
     </item>
     
